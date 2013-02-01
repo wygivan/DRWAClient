@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DRWAClient</string>
+    
+    <string name="server_ip">Server IP:</string>
+    <string name="server_ip_default">152.14.92.74</string>
+    
+    <string name="scenario">Scenario:</string>
+    <string name="bulk">Bulk download</string>
+    <string name="web">Web surfing</string>
+    <string name="streaming">Video streaming</string><string name="onetime">Run one-time test</string>
+    <string name="start_automated">Start automated test</string>
+    <string name="stop_automated">Stop automated test</string>
+
+</resources>
