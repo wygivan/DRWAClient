@@ -1,0 +1,3 @@
+This is a very simple Android App for TCP performance testing. It is supposed to be used in conjunction with DRWAServer (https://github.com/wygivan/DRWAServer) but can be adapted to interact with other server as well. More features will be added in future.
+
+Yaogong Wang <ywang15@ncsu.edu>
