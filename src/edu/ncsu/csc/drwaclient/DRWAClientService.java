@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class DRWAClientService extends Service {
 	public static final String SERVER_IP = "SERVER_IP";
-	public static final String CHOSEN_SCENARIO = "CHOSEN_SCENARIO";
+	public static final String UPDOWN = "UPDOWN";
 	private final static int myID = 1234;
 	private boolean isRunning = false;
 	private Thread testThread;
@@ -17,10 +17,10 @@ public class DRWAClientService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		String server_ip = intent.getStringExtra(SERVER_IP);
-		String chosen_scenario = intent.getStringExtra(CHOSEN_SCENARIO);
+		String updown = intent.getStringExtra(UPDOWN);
 		
 		if (!isRunning) {
-			testThread = new Thread(new AutomatedTestThread(server_ip, chosen_scenario));
+			testThread = new Thread(new AutomatedTestThread(server_ip, updown));
 			testThread.start();
 			
 			isRunning = true;

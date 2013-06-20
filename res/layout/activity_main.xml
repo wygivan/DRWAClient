@@ -25,43 +25,6 @@
         android:text="@string/server_ip"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <RadioGroup
-        android:id="@+id/scenario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/server_ip"
-        android:layout_alignTop="@+id/textView3" >
-
-        <RadioButton
-            android:id="@+id/bulk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/bulk" />
-
-        <RadioButton
-            android:id="@+id/web"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/web" />
-
-        <RadioButton
-            android:id="@+id/streaming"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/streaming" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/server_ip"
-        android:layout_marginTop="14dp"
-        android:text="@string/scenario"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <Button
         android:id="@+id/automated"
         android:layout_width="wrap_content"
@@ -72,13 +35,88 @@
         android:onClick="automated_test"
         android:text="@string/start_automated" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/server_ip"
+        android:layout_marginTop="24dp"
+        android:text="@string/lambda"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/lambda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/server_ip"
+        android:layout_alignRight="@+id/progress"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="@string/lambda_default" />
+
+    <EditText
+        android:id="@+id/tcp_rmem_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignRight="@+id/drwa"
+        android:layout_marginLeft="24dp"
+        android:layout_toRightOf="@+id/textView3"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="@string/tcp_rmem_max_default" />
+
+    <CheckBox
+        android:id="@+id/drwa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignRight="@+id/server_ip"
+        android:checked="false"
+        android:text="@string/drwa"
+        android:textSize="@dimen/normal_text_size" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="28dp"
+        android:text="@string/tcp_rmem_max"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+        android:id="@+id/updown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tcp_rmem_max"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" >
+
+        <RadioButton
+            android:id="@+id/downlink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/downlink" />
+
+        <RadioButton
+            android:id="@+id/uplink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uplink" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/onetime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/automated"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="14dp"
         android:onClick="onetime_test"
         android:text="@string/onetime" />
 
@@ -87,8 +125,8 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/onetime"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:visibility="invisible" />
 
 </RelativeLayout>

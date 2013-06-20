@@ -5,12 +5,15 @@
     
     <string name="server_ip">Server IP:</string>
     <string name="server_ip_default">152.14.92.74</string>
-    
-    <string name="scenario">Scenario:</string>
-    <string name="bulk">Bulk download</string>
-    <string name="web">Web surfing</string>
-    <string name="streaming">Video streaming</string><string name="onetime">Run one-time test</string>
+    <string name="lambda">Lambda:</string>
+    <string name="lambda_default">3</string>
+    <string name="tcp_rmem_max">tcp_rmem_max:</string>
+    <string name="tcp_rmem_max_default">2560000</string>
+    <string name="drwa">DRWA</string>
+    <string name="onetime">Run one-time test</string>
     <string name="start_automated">Start automated test</string>
     <string name="stop_automated">Stop automated test</string>
+    <string name="uplink">Uplink</string>
+    <string name="downlink">Downlink</string>
 
 </resources>
