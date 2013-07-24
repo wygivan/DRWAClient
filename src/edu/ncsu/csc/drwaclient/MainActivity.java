@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 
 	private boolean check_input_set_param() {
 		EditText server_ip = (EditText) findViewById(R.id.server_ip);
-		EditText lambda = (EditText) findViewById(R.id.lambda);
+		EditText lambda10 = (EditText) findViewById(R.id.lambda10);
 		EditText tcp_rmem_max = (EditText) findViewById(R.id.tcp_rmem_max);
 		CheckBox drwa = (CheckBox) findViewById(R.id.drwa);
 
@@ -85,7 +85,8 @@ public class MainActivity extends Activity {
 		}
 
 		try {
-			int lambda_value = Integer.parseInt(lambda.getText().toString());
+			int lambda10_value = Integer
+					.parseInt(lambda10.getText().toString());
 			int tcp_rmem_max_value = Integer.parseInt(tcp_rmem_max.getText()
 					.toString());
 
@@ -93,8 +94,8 @@ public class MainActivity extends Activity {
 			DataOutputStream os = new DataOutputStream(pr.getOutputStream());
 
 			// set lambda
-			os.writeBytes("echo " + lambda_value
-					+ " > /proc/sys/net/ipv4/tcp_drwa_lambda\n");
+			os.writeBytes("echo " + lambda10_value
+					+ " > /proc/sys/net/ipv4/tcp_drwa_lambda10\n");
 
 			// set tcp_rmem_max
 			os.writeBytes("echo " + tcp_rmem_max_value
@@ -131,14 +132,14 @@ public class MainActivity extends Activity {
 
 	private void enable_user_input(boolean onoff) {
 		EditText server_ip = (EditText) findViewById(R.id.server_ip);
-		EditText lambda = (EditText) findViewById(R.id.lambda);
+		EditText lambda10 = (EditText) findViewById(R.id.lambda10);
 		CheckBox drwa = (CheckBox) findViewById(R.id.drwa);
 		EditText tcp_rmem_max = (EditText) findViewById(R.id.tcp_rmem_max);
 		RadioGroup updown = (RadioGroup) findViewById(R.id.updown);
 		Button onetime = (Button) findViewById(R.id.onetime);
 
 		server_ip.setEnabled(onoff);
-		lambda.setEnabled(onoff);
+		lambda10.setEnabled(onoff);
 		drwa.setEnabled(onoff);
 		tcp_rmem_max.setEnabled(onoff);
 		for (int i = 0; i < updown.getChildCount(); i++) {
