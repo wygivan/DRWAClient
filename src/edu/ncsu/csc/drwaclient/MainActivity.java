@@ -64,6 +64,7 @@ public class MainActivity extends Activity {
 	private boolean check_input_set_param() {
 		EditText server_ip = (EditText) findViewById(R.id.server_ip);
 		EditText lambda10 = (EditText) findViewById(R.id.lambda10);
+		EditText alpha = (EditText) findViewById(R.id.alpha);
 		EditText tcp_rmem_max = (EditText) findViewById(R.id.tcp_rmem_max);
 		CheckBox drwa = (CheckBox) findViewById(R.id.drwa);
 
@@ -87,6 +88,7 @@ public class MainActivity extends Activity {
 		try {
 			int lambda10_value = Integer
 					.parseInt(lambda10.getText().toString());
+			int alpha_value = Integer.parseInt(alpha.getText().toString());
 			int tcp_rmem_max_value = Integer.parseInt(tcp_rmem_max.getText()
 					.toString());
 
@@ -96,6 +98,10 @@ public class MainActivity extends Activity {
 			// set lambda
 			os.writeBytes("echo " + lambda10_value
 					+ " > /proc/sys/net/ipv4/tcp_drwa_lambda10\n");
+
+			// set alpha
+			os.writeBytes("echo " + alpha_value
+					+ " > /proc/sys/net/ipv4/tcp_drwa_alpha\n");
 
 			// set tcp_rmem_max
 			os.writeBytes("echo " + tcp_rmem_max_value
@@ -110,7 +116,7 @@ public class MainActivity extends Activity {
 		} catch (NumberFormatException e) {
 			AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
 			alt_bld.setTitle("Warning");
-			alt_bld.setMessage("Invalid lambda/tcp_rmem_max value!");
+			alt_bld.setMessage("Invalid lambda/alpha/tcp_rmem_max value!");
 			alt_bld.setPositiveButton("OK",
 					new DialogInterface.OnClickListener() {
 						@Override
@@ -133,15 +139,17 @@ public class MainActivity extends Activity {
 	private void enable_user_input(boolean onoff) {
 		EditText server_ip = (EditText) findViewById(R.id.server_ip);
 		EditText lambda10 = (EditText) findViewById(R.id.lambda10);
-		CheckBox drwa = (CheckBox) findViewById(R.id.drwa);
+		EditText alpha = (EditText) findViewById(R.id.alpha);
 		EditText tcp_rmem_max = (EditText) findViewById(R.id.tcp_rmem_max);
+		CheckBox drwa = (CheckBox) findViewById(R.id.drwa);
 		RadioGroup updown = (RadioGroup) findViewById(R.id.updown);
 		Button onetime = (Button) findViewById(R.id.onetime);
 
 		server_ip.setEnabled(onoff);
 		lambda10.setEnabled(onoff);
-		drwa.setEnabled(onoff);
+		alpha.setEnabled(onoff);
 		tcp_rmem_max.setEnabled(onoff);
+		drwa.setEnabled(onoff);
 		for (int i = 0; i < updown.getChildCount(); i++) {
 			((RadioButton) updown.getChildAt(i)).setEnabled(onoff);
 		}

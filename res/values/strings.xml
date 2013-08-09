@@ -7,7 +7,7 @@
     <string name="server_ip_default">152.14.92.74</string>
     <string name="lambda10">Lambda10:</string>
     <string name="lambda10_default">30</string>
-    <string name="tcp_rmem_max">tcp_rmem_max:</string>
+    <string name="alpha">Alpha:</string><string name="alpha_default">1</string><string name="tcp_rmem_max">tcp_rmem_max:</string>
     <string name="tcp_rmem_max_default">2560000</string>
     <string name="drwa">DRWA</string>
     <string name="onetime">Run one-time test</string>
@@ -15,5 +15,7 @@
     <string name="stop_automated">Stop automated test</string>
     <string name="uplink">Uplink</string>
     <string name="downlink">Downlink</string>
+    
+    
 
 </resources>
